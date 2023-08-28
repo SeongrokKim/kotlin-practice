@@ -1,21 +1,17 @@
 fun main() {
-    var input = readln().split(" ").map{it.toInt()}.sorted().reversed()
-    var f = input[0]
-    var s = input[1]
-    var t = input[2]
-    if(f != s && s != t){
-        println(f*100)
+    val x = readln().toInt()
+    val n = readln().toInt()
+    var tot = 0
+    for(var i = 0; i<n; i++){
+        val input = readln().split(" ").map{it.toInt()}
+        val price = input[0]
+        val num = input[1]
+        tot += price * num
     }
-    else if(f == s && s == t){
-        println(10000+f*1000)
+    if(tot == x){
+        println("Yes")
     }
     else{
-        if(f == s && s != t){
-            println(1000+f*100)
-        } else if(f == t && s != t){
-            println(1000+f*100)
-        } else{
-            println(1000+s*100)
-        }
+        println("No")
     }
 }
